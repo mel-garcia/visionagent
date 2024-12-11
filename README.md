@@ -1,6 +1,6 @@
 # Web Development Project - *Visin Agent*
 
-Submitted by: **Andhy Gonzalez-Acevedo**
+Submitted by: **X**
 
 
 Time spent: **X** hours spent in total
