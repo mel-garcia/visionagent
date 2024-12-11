@@ -2,7 +2,7 @@ import { useState } from 'react'
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 import Header from './Header';
-import Footer from './Footer';
+//import Footer from './Footer';
 import './App.css'
 
 function App() {
@@ -21,18 +21,20 @@ function App() {
      </a>
       </div>*/} 
       
-      <h1>Enter URL Here!</h1> <br></br>
-      <p>It'll Summarize Your Website</p>
-
+      <h1>Summarize Your Website Here!</h1> <br></br>
       <input name="myInput" />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
       </div>
-
-      <Footer />
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+      {/*<Footer />*/}
 
     </>
   )
