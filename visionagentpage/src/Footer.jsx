@@ -1,24 +1,24 @@
 import React from 'react';
-import './assets/Footer.css';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
-    return (
-        <header>
-            <h1></h1>
-            <nav>
-                <ul>
-                    <li style={{ marginRight: '15px' }}>
-                        <a href="#home">Home</a>
-                    </li>
-                    <li style={{ marginRight: '15px' }}>
-                        <a href="#about" >About</a>
-                    </li>
-                    
+import '../src/assets/Footer.css';
 
-                </ul>
-            </nav>
-        </header>
-    );
+const Footer = () => {
+  return (
+    <footer className="footer">
+
+<nav>
+        <ul className="header">
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <a href="https://github.com/mel-garcia/visionagent" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </ul>
+      </nav>
+      <p>&copy; 2024 VisionAgent. All Rights Reserved.</p>
+    </footer>
+  );
 };
 
-export default Header;
+export default Footer;

@@ -1,45 +1,49 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
-  to {
-    transform: rotate(360deg);
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
   }
-}
+  .output-section p {
+    margin: 10px 0;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: left;
+    font-size: 20px;
 
-.card {
-  padding: 2em;
-}
+  }
+  button{
+    margin-left: '10px'; 
+    padding: '5px 10px';
+    cursor: 'pointer';
+    background-color: '#007bff';
+     color: '#fff';
+    border: 'none';
+    border-radius: '10px';
 
-.read-the-docs {
-  color: #888;
-}
-p{
-  color: grey;
-}
+  }
+
+  button:hover {
+    background-color: black; /* Change to a light blue */
+    color: #ffffff; /* White text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transform: translateY(-2px); /* Slight lift effect */
+    transition: all 0.3s ease; /* Smooth animation */
+  }
+
+  input:hover {
+    border: 1px solid #007BFF; /* Add a border highlight */
+    background-color: black; /* Slight background change */
+    color:white;
+    font: bold;
+    transition: all 0.3s ease; /* Smooth transition */
+  }

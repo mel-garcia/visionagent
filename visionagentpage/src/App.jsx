@@ -1,59 +1,72 @@
-import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
-//import viteLogo from '/vite.svg'
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import './App.css'
+import About from './About';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  const [message, setMessage] = useState(''); // State to control the message below the input
+  const URL = ""; //api URL
+
+  const [text, setText] = useState(''); // State for the text input
+  const [paragraphs, setParagraphs] = useState([]); // State for generated paragraphs
 
   const handleClick = () => {
-    setMessage('submit'); // Set the message to "submit" when the button is clicked
+    // Generate multiple paragraphs based on the input text
+    if (text.trim()) {
+      const newParagraphs = Array(1).fill(`Generated content for: ${text}`);
+      setParagraphs(newParagraphs);
+    } else {
+      setParagraphs(['Please enter valid text.']);
+    }
   };
 
   return (
-    <>
-                <Header />
-  {/* Images
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-     </a>
-      </div>*/} 
-      
-      <h1>Enter URL Here!</h1> <br></br>
-      <p>It'll Summarize Your Website</p>
+    <Router>
+      <div className="app-container">
+        <Header />
 
+        <main className="main-content">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div>
+                  <h1>Enter URL Here!</h1>
+                  <div className="input-section">
+                    <input
+                      name="myInput"
+                      placeholder="Type something..."
+                      value={text}
+                      onChange={(e) => setText(e.target.value)}
+                      
+                    />
+                    <button
+                      onClick={handleClick}
+                      style={{ }}
+                    >
+                      Click Me
+                    </button>
+                    <p>It'll Summarize Your Website</p>
+                  </div>
 
-      <input name="myInput" placeholder="Type something..." />
-      <button
-        onClick={handleClick}
-        style={{ marginLeft: '10px', padding: '5px 10px', cursor: 'pointer' }}
-      >
-        Click Me
-      </button>
-      <div style={{ marginTop: '10px', color: 'blue' }}>
-        {message} {/* Display the message below the input */}
+                  <div className="output-section" style={{ marginTop: '20px', color: 'grey' }}>
+                    {paragraphs.map((para, index) => (
+                      <p key={index}>{para}</p>
+                    ))}
+                  </div>
+                </div>
+              }
+            />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </main>
+
+        <Footer />
       </div>
-
-
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-
-      </div>
-
-      <Footer />
-
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
