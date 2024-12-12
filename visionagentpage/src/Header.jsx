@@ -5,7 +5,7 @@ import '../src/assets/Header.css';
 const Header = () => {
   return (
     <header className="header">
-      <h1>Vision Agent</h1>
+      <h1>VisionAgent</h1>
       <nav>
         <ul>
           <li><Link to="/">Home</Link></li>

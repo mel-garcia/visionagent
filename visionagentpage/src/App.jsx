@@ -31,8 +31,6 @@ function App() {
               element={
                 <div>
                   <h1>Enter URL Here!</h1>
-                  <p>It'll Summarize Your Website</p>
-
                   <div className="input-section">
                     <input
                       name="myInput"
@@ -47,6 +45,7 @@ function App() {
                     >
                       Click Me
                     </button>
+                    <p>It'll Summarize Your Website</p>
                   </div>
 
                   <div className="output-section" style={{ marginTop: '20px', color: 'grey' }}>
