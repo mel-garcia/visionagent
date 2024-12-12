@@ -8,9 +8,42 @@
     padding: 20px;
     text-align: center;
   }
-  .input-section {
+  input {
     margin-top: 20px;
+    margin-bottom: 20px;
+    
   }
   .output-section p {
     margin: 10px 0;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: left;
+    font-size: 20px;
+
+  }
+  button{
+    margin-left: '10px'; 
+    padding: '5px 10px';
+    cursor: 'pointer';
+    background-color: '#007bff';
+     color: '#fff';
+    border: 'none';
+    border-radius: '10px';
+
+  }
+
+  button:hover {
+    background-color: black; /* Change to a light blue */
+    color: #ffffff; /* White text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transform: translateY(-2px); /* Slight lift effect */
+    transition: all 0.3s ease; /* Smooth animation */
+  }
+
+  input:hover {
+    border: 1px solid #007BFF; /* Add a border highlight */
+    background-color: black; /* Slight background change */
+    color:white;
+    font: bold;
+    transition: all 0.3s ease; /* Smooth transition */
   }

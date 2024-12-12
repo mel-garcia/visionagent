@@ -12,7 +12,7 @@ function App() {
   const handleClick = () => {
     // Generate multiple paragraphs based on the input text
     if (text.trim()) {
-      const newParagraphs = Array(3).fill(`Generated content for: ${text}`);
+      const newParagraphs = Array(1).fill(`Generated content for: ${text}`);
       setParagraphs(newParagraphs);
     } else {
       setParagraphs(['Please enter valid text.']);
@@ -37,11 +37,11 @@ function App() {
                       placeholder="Type something..."
                       value={text}
                       onChange={(e) => setText(e.target.value)}
-                      style={{ padding: '5px', borderRadius: '4px', border: '1px solid #ccc' }}
+                      
                     />
                     <button
                       onClick={handleClick}
-                      style={{ marginLeft: '10px', padding: '5px 10px', cursor: 'pointer', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '4px' }}
+                      style={{ }}
                     >
                       Click Me
                     </button>

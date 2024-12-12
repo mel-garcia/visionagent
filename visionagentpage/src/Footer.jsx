@@ -16,7 +16,7 @@ const Footer = () => {
           </a>
         </ul>
       </nav>
-      <p>&copy; 2024 My Website. All Rights Reserved.</p>
+      <p>&copy; 2024 VisionAgent. All Rights Reserved.</p>
     </footer>
   );
 };
