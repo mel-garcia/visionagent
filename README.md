@@ -1,6 +1,10 @@
 ## Project - *Vision Agent*
 Submitted by: Andhy Gonzalez, Melissa Garcia, David Jacquet, Giovanni Rodriguez
 
+## AI Agent 
+
+If you'd like, the AI Agent code is present in the src folder as a txt file as SummzarizeAgent.txt.
+
 ## Elevator Pitch
 
 VisionAgent empowers accessibility by summarizing webpage content, improving productivity, and enabling easy comprehension for all users, especially those relying on screen readers.
