@@ -1,23 +1,13 @@
-header{
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background-color: #f8f9fa;
     padding: 10px 20px;
-    border-bottom: 1px solid #ddd ;
-}
-h1{
-    margin: 0; 
-    font-size: 40px; 
-    color: #333;
-}    /*display: 'flex', listStyle: 'none', padding: '0', margin: '10px 0 0' */
-
-ul{
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 10px;
-}
-/* a href="#home" style={{ textDecoration: 'none', color: '#007bff'*/
-
-a{
-    text-decoration: none;
-    color: #007bff;
-}
+    border-top: 1px solid #ddd;
+    text-align: center;
+    color: #888;
+  }
+  
+  
+  
