@@ -6,6 +6,9 @@ import About from './About';
 import './App.css';
 
 function App() {
+
+  const URL = ""; //api URL
+
   const [text, setText] = useState(''); // State for the text input
   const [paragraphs, setParagraphs] = useState([]); // State for generated paragraphs
 
