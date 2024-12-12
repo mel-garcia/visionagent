@@ -1,0 +1,25 @@
+from uagents import Agent, Context, Model
+
+# Shared Models
+class Prompt(Model):
+    code_generation: bool
+    text: str
+
+class Response(Model):
+    text: str
+
+# This address must match AI_AGENT_ADDRESS in main_agent.py
+AI_AGENT_ADDRESS = "agent1qt70gnyr355uhlrxk68ralyhq2tx9xqj0d6a07r4twvvrtjgrmzjkgpgvq2"
+
+ai_agent = Agent(address=AI_AGENT_ADDRESS)
+
+@ai_agent.on_message(model=Prompt)
+async def handle_prompt(ctx: Context, sender: str, msg: Prompt):
+    ctx.logger.info(f"AI Agent received prompt from {sender}: {msg.text}")
+    # Create a dummy summary to respond with
+    summary = "This is a summarized version of the provided content."
+    await ctx.send(sender, Response(text=summary))
+    ctx.logger.info(f"AI Agent sent response back to {sender}")
+
+if __name__ == "__main__":
+    ai_agent.run()
