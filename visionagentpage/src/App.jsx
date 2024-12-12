@@ -6,19 +6,36 @@ import About from './About';
 import './App.css';
 
 function App() {
-
-  const URL = ""; //api URL
+  const URL = "http://localhost:8000/summarize"; // Replace with the actual API endpoint
 
   const [text, setText] = useState(''); // State for the text input
-  const [paragraphs, setParagraphs] = useState([]); // State for generated paragraphs
+  const [summary, setSummary] = useState(''); // State for the summarized text
+  const [error, setError] = useState(''); // State for any error messages
 
-  const handleClick = () => {
-    // Generate multiple paragraphs based on the input text
+  const handleClick = async () => {
     if (text.trim()) {
-      const newParagraphs = Array(1).fill(`Generated content for: ${text}`);
-      setParagraphs(newParagraphs);
+      try {
+        const response = await fetch(URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ url: text }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setSummary(data.text); // Assuming the API returns { text: "summary here" }
+          setError('');
+        } else {
+          setError('Failed to fetch summary. Please try again.');
+        }
+      } catch (error) {
+        setError('An error occurred. Please check the console for more details.');
+        console.error(error);
+      }
     } else {
-      setParagraphs(['Please enter valid text.']);
+      setError('Please enter a valid URL.');
     }
   };
 
@@ -37,24 +54,19 @@ function App() {
                   <div className="input-section">
                     <input
                       name="myInput"
-                      placeholder="Type something..."
+                      placeholder="Type a URL..."
                       value={text}
                       onChange={(e) => setText(e.target.value)}
-                      
                     />
-                    <button
-                      onClick={handleClick}
-                      style={{ }}
-                    >
-                      Click Me
+                    <button onClick={handleClick}>
+                      Summarize
                     </button>
                     <p>It'll Summarize Your Website</p>
                   </div>
 
                   <div className="output-section" style={{ marginTop: '20px', color: 'grey' }}>
-                    {paragraphs.map((para, index) => (
-                      <p key={index}>{para}</p>
-                    ))}
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
+                    {summary && <p>{summary}</p>}
                   </div>
                 </div>
               }
