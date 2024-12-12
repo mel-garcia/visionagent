@@ -16,7 +16,12 @@ class TextResponse(Model):
     text: str
 
 # Create our agent
-agent = Agent()
+agent = Agent(
+    # to run locally uncomment below
+    # name = "user",
+    # port = "8000",
+    # endpoint=["localhost:8000/submit"]
+)
 
 # Agent addresses
 SCRAPER_ADDRESS = "agent1qwnjmzwwdq9rjs30y3qw988htrvte6lk2xaak9xg4kz0fsdz0t9ws4mwsgs"
