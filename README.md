@@ -78,6 +78,8 @@ What languages, frameworks, platforms, cloud services, databases, APIs, or other
 - Tools: GitHub for collaboration and version control
 
 ## "Try it out" links
-[link](https://github.com/mel-garcia/visionagent)
+[VisionAgent Github Link](https://github.com/mel-garcia/visionagent)
 
 ## Project Media
+<img src="/HackathonTeamPhoto.jpg" alt="Hackathon team: Andhy, Melissa, David, Giovanni"/>
+<p>Team members: Andhy Gonzalez, Melissa Garcia, David Jacquet, Giovanni Rodriguez</p>
