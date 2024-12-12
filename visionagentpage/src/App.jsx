@@ -64,7 +64,7 @@ function App() {
                     <p>It'll Summarize Your Website</p>
                   </div>
 
-                  <div className="output-section" style={{ marginTop: '20px', color: 'grey' }}>
+                  <div className="output-section" style={{ marginTop: '20px', color: 'black' }}>
                     {error && <p style={{ color: 'red' }}>{error}</p>}
                     {summary && <p>{summary}</p>}
                   </div>
